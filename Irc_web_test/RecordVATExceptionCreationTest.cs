@@ -20,7 +20,7 @@ namespace WebIrcTests
         private IWebDriver driver;
         public IDictionary<string, object> vars { get; private set; }
         private IJavaScriptExecutor js;
-        private string baseURL;
+        public static string baseURL;
 
         [SetUp]
         public void SetUp()

@@ -25,7 +25,7 @@ namespace WebIrcTests
         [SetUp]
         public void SetUp()
         {
-            baseURL = "https://dev.irc.ru.dhl.com/calculation";
+            baseURL = "https://test.irc.ru.dhl.com/calculation";
             driver = new ChromeDriver();
             js = (IJavaScriptExecutor)driver;
             vars = new Dictionary<string, object>();

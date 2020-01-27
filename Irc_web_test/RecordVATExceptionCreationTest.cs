@@ -38,18 +38,52 @@ namespace WebIrcTests
         [Test]
         public void RecordVATExceptionCreationTest()
         {
-            driver.Navigate().GoToUrl(baseURL);
-            driver.FindElement(By.LinkText("Vat Exception List")).Click();
-            driver.FindElement(By.LinkText("Add New Record")).Click();
+            OpenHomePage();
+            GoToVATExceptionListPage();
+            InitRecordCreation();
+            RecordData data = new RecordData();
+            data.Account0 = "123456789";
+            data.Account20 = "123456780";
+            FillRecordForm(data);
+
+            SaveRecordCreation();
+            //driver.FindElement(By.XPath("//button")).Click();
+            GoToHomePage();
+        }
+
+        private void GoToHomePage()
+        {
+            driver.FindElement(By.LinkText("Calculate")).Click();
+        }
+
+        private void SaveRecordCreation()
+        {
+            driver.FindElement(By.XPath("//button[@type=\'button\']")).Click();
+        }
+
+        private void FillRecordForm(RecordData data)
+        {
             driver.FindElement(By.Id("account0")).Click();
-            driver.FindElement(By.Id("account0")).SendKeys("111111111");
+            driver.FindElement(By.Id("account0")).SendKeys(data.Account0);
             driver.FindElement(By.Id("account20")).Click();
-            driver.FindElement(By.Id("account20")).SendKeys("111111111");
+            driver.FindElement(By.Id("account20")).SendKeys(data.Account20);
             driver.FindElement(By.Id("export")).Click();
             driver.FindElement(By.Id("import")).Click();
-            driver.FindElement(By.XPath("//button[@type=\'button\']")).Click();
-            driver.FindElement(By.XPath("//button")).Click();
-            driver.FindElement(By.LinkText("Calculate")).Click();
+        }
+
+        private void OpenHomePage()
+        {
+            driver.Navigate().GoToUrl(baseURL);
+        }
+
+        private void GoToVATExceptionListPage()
+        {
+            driver.FindElement(By.LinkText("Vat Exception List")).Click();
+        }
+
+        private void InitRecordCreation()
+        {
+            driver.FindElement(By.LinkText("Add New Record")).Click();
         }
     }
 

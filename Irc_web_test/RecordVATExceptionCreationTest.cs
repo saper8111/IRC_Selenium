@@ -47,7 +47,7 @@ namespace WebIrcTests
             FillRecordForm(data);
 
             SaveRecordCreation();
-            //driver.FindElement(By.XPath("//button")).Click();
+            Thread.Sleep(1000);
             GoToHomePage();
         }
 
@@ -59,6 +59,8 @@ namespace WebIrcTests
         private void SaveRecordCreation()
         {
             driver.FindElement(By.XPath("//button[@type=\'button\']")).Click();
+            driver.FindElement(By.XPath("//button")).Click();
+
         }
 
         private void FillRecordForm(RecordData data)

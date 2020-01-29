@@ -59,7 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\CalculateData.cs" />
+    <Compile Include="Model\AWBData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\RecordData.cs" />
     <Compile Include="RecordVATExceptionCreationTest.cs" />

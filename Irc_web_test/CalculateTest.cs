@@ -24,6 +24,7 @@ namespace WebIrcTests
             driver = new ChromeDriver();
             baseURL = "https://test.irc.ru.dhl.com/calculation";
             verificationErrors = new StringBuilder();
+
         }
 
         [TearDown]
@@ -41,14 +42,15 @@ namespace WebIrcTests
         }
 
         [Test]
-        public void CalculateTest()
+        private void CalculateTest()
         {
             OpenHomePage();
-            FillAWBNumber();
+            AWBData data = new AWBData("7281956765");
+            FillAWBNumber(data);
             Thread.Sleep(1000);
-            Choise0VAT();
+            ChoiseVAT();
             InitCalculate();
-            Thread.Sleep(7000);
+            Thread.Sleep(10000);
         }
 
         private void InitCalculate()
@@ -56,22 +58,71 @@ namespace WebIrcTests
             driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
         }
 
-        private void Choise0VAT()
+        private void ChoiseVAT()
         {
+            driver.FindElement(By.Id("contract")).Click();
             new SelectElement(driver.FindElement(By.Id("contract"))).SelectByText("YES");
             Thread.Sleep(1000);
             driver.FindElement(By.Id("contract")).Click();
         }
 
-        private void FillAWBNumber()
+        private void FillAWBNumber(AWBData data)
         {
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("7281956765");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(data.AWB_number);
         }
 
         private void OpenHomePage()
         {
             driver.Navigate().GoToUrl(baseURL);
+        }
+
+        private bool IsElementPresent(By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        private bool IsAlertPresent()
+        {
+            try
+            {
+                driver.SwitchTo().Alert();
+                return true;
+            }
+            catch (NoAlertPresentException)
+            {
+                return false;
+            }
+        }
+
+        private string CloseAlertAndGetItsText()
+        {
+            try
+            {
+                IAlert alert = driver.SwitchTo().Alert();
+                string alertText = alert.Text;
+                if (acceptNextAlert)
+                {
+                    alert.Accept();
+                }
+                else
+                {
+                    alert.Dismiss();
+                }
+                return alertText;
+            }
+            finally
+            {
+                acceptNextAlert = true;
+            }
         }
     }
 }

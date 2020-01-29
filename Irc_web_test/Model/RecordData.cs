@@ -13,10 +13,6 @@ namespace WebIrcTests
         private string account0 = "";
         private string account20 = "";
 
-        
-
-      
-
         public string Account0 { get; set; }
         
         public string Account20 { get; set; }

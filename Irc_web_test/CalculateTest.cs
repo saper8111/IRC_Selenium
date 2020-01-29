@@ -46,17 +46,26 @@ namespace WebIrcTests
             OpenHomePage();
             FillAWBNumber();
             Thread.Sleep(1000);
+            Choise0VAT();
+            InitCalculate();
+            Thread.Sleep(7000);
+        }
+
+        private void InitCalculate()
+        {
+            driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
+        }
+
+        private void Choise0VAT()
+        {
             new SelectElement(driver.FindElement(By.Id("contract"))).SelectByText("YES");
             Thread.Sleep(1000);
             driver.FindElement(By.Id("contract")).Click();
-            driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
-            Thread.Sleep(7000);
         }
 
         private void FillAWBNumber()
         {
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            //driver.FindElement(By.XPath("//input[@type='text']")).Clear();
             driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("7281956765");
         }
 

@@ -41,11 +41,7 @@ namespace WebIrcTests
             OpenHomePage();
             GoToVATExceptionListPage();
             InitRecordCreation();
-            RecordData data = new RecordData();
-            data.Account0 = "123456789";
-            data.Account20 = "123456780";
-            FillRecordForm(data);
-
+            FillRecordForm(new AccountData("123456789", "123456780"));
             SaveRecordCreation();
             Thread.Sleep(1000);
             GoToHomePage();
@@ -63,12 +59,12 @@ namespace WebIrcTests
 
         }
 
-        private void FillRecordForm(RecordData data)
+        private void FillRecordForm(AccountData account)
         {
             driver.FindElement(By.Id("account0")).Click();
-            driver.FindElement(By.Id("account0")).SendKeys(data.Account0);
+            driver.FindElement(By.Id("account0")).SendKeys(account.Account0);
             driver.FindElement(By.Id("account20")).Click();
-            driver.FindElement(By.Id("account20")).SendKeys(data.Account20);
+            driver.FindElement(By.Id("account20")).SendKeys(account.Account20);
             driver.FindElement(By.Id("export")).Click();
             driver.FindElement(By.Id("import")).Click();
         }

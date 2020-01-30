@@ -42,11 +42,12 @@ namespace WebIrcTests
         }
 
         [Test]
-        private void CalculateTest()
+        public void CalculateTest()
         {
             OpenHomePage();
-            AWBData data = new AWBData("7281956765");
-            FillAWBNumber(data);
+            //AWBData data = new AWBData();
+            //data.AWB_number = "7281956765";
+            FillAWBNumber(new AwbData("7281956765"));
             Thread.Sleep(1000);
             ChoiseVAT();
             InitCalculate();
@@ -66,63 +67,15 @@ namespace WebIrcTests
             driver.FindElement(By.Id("contract")).Click();
         }
 
-        private void FillAWBNumber(AWBData data)
+        private void FillAWBNumber(AwbData awb)
         {
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(data.AWB_number);
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(awb.Awb_number);
         }
 
         private void OpenHomePage()
         {
             driver.Navigate().GoToUrl(baseURL);
-        }
-
-        private bool IsElementPresent(By by)
-        {
-            try
-            {
-                driver.FindElement(by);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
-        private bool IsAlertPresent()
-        {
-            try
-            {
-                driver.SwitchTo().Alert();
-                return true;
-            }
-            catch (NoAlertPresentException)
-            {
-                return false;
-            }
-        }
-
-        private string CloseAlertAndGetItsText()
-        {
-            try
-            {
-                IAlert alert = driver.SwitchTo().Alert();
-                string alertText = alert.Text;
-                if (acceptNextAlert)
-                {
-                    alert.Accept();
-                }
-                else
-                {
-                    alert.Dismiss();
-                }
-                return alertText;
-            }
-            finally
-            {
-                acceptNextAlert = true;
-            }
         }
     }
 }

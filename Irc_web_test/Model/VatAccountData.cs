@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace WebIrcTests
 {
    
-    class AccountData
+    class VatAccountData
     {
         private string account0;
         private string account20;
 
-        public AccountData (string account0, string account20)
+        public VatAccountData (string account0, string account20)
         {
             this.account0 = account0;
             this.account20 = account20;

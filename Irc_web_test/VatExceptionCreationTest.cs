@@ -15,7 +15,7 @@ using NUnit.Framework;
 namespace WebIrcTests
 {
     [TestFixture]
-    public class RecordVATExceptionCreationTests
+    public class VatExceptionCreationTests
     {
         private IWebDriver driver;
         public IDictionary<string, object> vars { get; private set; }
@@ -36,12 +36,12 @@ namespace WebIrcTests
             driver.Quit();
         }
         [Test]
-        public void RecordVATExceptionCreationTest()
+        public void VatExceptionCreationTest()
         {
             OpenHomePage();
             GoToVATExceptionListPage();
             InitRecordCreation();
-            FillRecordForm(new AccountData("123456789", "123456780"));
+            FillRecordForm(new VatAccountData("123456789", "123456780"));
             SaveRecordCreation();
             Thread.Sleep(1000);
             GoToHomePage();
@@ -59,7 +59,7 @@ namespace WebIrcTests
 
         }
 
-        private void FillRecordForm(AccountData account)
+        private void FillRecordForm(VatAccountData account)
         {
             driver.FindElement(By.Id("account0")).Click();
             driver.FindElement(By.Id("account0")).SendKeys(account.Account0);

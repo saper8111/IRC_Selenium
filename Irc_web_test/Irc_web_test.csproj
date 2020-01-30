@@ -61,8 +61,8 @@
   <ItemGroup>
     <Compile Include="Model\AwbData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\AccountData.cs" />
-    <Compile Include="RecordVATExceptionCreationTest.cs" />
+    <Compile Include="Model\VatAccountData.cs" />
+    <Compile Include="VatExceptionCreationTest.cs" />
     <Compile Include="CalculateTest.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebIrcTests
 {
-    class AwbData
+    public class AwbData
     {
         private string awb_number;
 

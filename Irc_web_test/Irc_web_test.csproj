@@ -59,16 +59,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\AwbData.cs" />
+    <Compile Include="model\AwbData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\VatAccountData.cs" />
-    <Compile Include="VatExceptionCreationTest.cs" />
-    <Compile Include="CalculateTest.cs" />
+    <Compile Include="model\VatAccountData.cs" />
+    <Compile Include="tests\TestBase.cs" />
+    <Compile Include="tests\VatExceptionCreationTest.cs" />
+    <Compile Include="tests\CalculateTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="appmanager\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

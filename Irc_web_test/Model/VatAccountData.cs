@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WebIrcTests
 {
    
-    class VatAccountData
+   public class VatAccountData
     {
         private string account0;
         private string account20;

@@ -59,7 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationManager.cs" />
     <Compile Include="CalculateHelper.cs" />
+    <Compile Include="HelperBase.cs" />
     <Compile Include="model\AwbData.cs" />
     <Compile Include="NavigationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

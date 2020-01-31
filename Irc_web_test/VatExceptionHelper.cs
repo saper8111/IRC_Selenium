@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace WebIrcTests
 {
-    public class VatExceptionHelper
+    public class VatExceptionHelper:HelperBase
     {
-        private IWebDriver driver;
-
         public VatExceptionHelper(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
+            :base(driver) {}
 
         public void InitRecordCreation()
         {

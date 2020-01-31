@@ -9,14 +9,10 @@ using System.Threading.Tasks;
 
 namespace WebIrcTests
 {
-   public class CalculateHelper
+   public class CalculateHelper:HelperBase
     {
-        private IWebDriver driver;
-
         public CalculateHelper(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
+            :base(driver){ }
 
         public void FillAWBNumber(AwbData awb)
         {

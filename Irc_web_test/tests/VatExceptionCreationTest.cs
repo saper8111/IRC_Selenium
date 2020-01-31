@@ -21,13 +21,13 @@ namespace WebIrcTests
         [Test]
         public void VatExceptionCreationTest()
         {
-            OpenHomePage();
-            GoToVATExceptionListPage();
-            InitRecordCreation();
-            FillRecordForm(new VatAccountData("123456789", "123456780"));
-            SaveRecordCreation();
+            navigationHelper.OpenHomePage();
+            navigationHelper.GoToVATExceptionListPage();
+            vatExceptionHelper.InitRecordCreation();
+            vatExceptionHelper.FillRecordForm(new VatAccountData("123456789", "123456780"));
+            vatExceptionHelper.SaveRecordCreation();
             Thread.Sleep(1000);
-            GoToHomePage();
+            navigationHelper.GoToHomePage();
         }
 
         

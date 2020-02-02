@@ -12,10 +12,16 @@ namespace WebIrcTests
     public class HelperBase
     {
         protected IWebDriver driver;
+        protected string baseURL;
 
         public HelperBase(IWebDriver driver)
         {
             this.driver = driver;
+        }
+
+        public HelperBase(IWebDriver driver, string baseURL) : this(driver)
+        {
+            this.baseURL = baseURL;
         }
     }
 }

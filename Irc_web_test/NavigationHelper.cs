@@ -12,12 +12,12 @@ namespace WebIrcTests
     public class NavigationHelper:HelperBase
     {
 
-        public NavigationHelper(IWebDriver driver)
-            :base(driver){}
+        public NavigationHelper(IWebDriver driver, string baseURL)
+            :base(driver,baseURL){}
 
         public void OpenHomePage()
         {
-            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
+            driver.Navigate().GoToUrl(baseURL);
         }
 
         public void GoToHomePage()

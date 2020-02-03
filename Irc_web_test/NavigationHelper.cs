@@ -13,7 +13,10 @@ namespace WebIrcTests
     {
 
         public NavigationHelper(IWebDriver driver)
-            :base(driver){}
+            : base(driver)
+        {
+        }
+            
 
         public void OpenHomePage()
         {

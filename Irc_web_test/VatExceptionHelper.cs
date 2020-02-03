@@ -10,7 +10,9 @@ namespace WebIrcTests
     public class VatExceptionHelper:HelperBase
     {
         public VatExceptionHelper(IWebDriver driver)
-            :base(driver) {}
+            : base(driver)
+        {
+        }
 
         public void InitRecordCreation()
         {

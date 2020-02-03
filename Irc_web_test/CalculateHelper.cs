@@ -12,7 +12,9 @@ namespace WebIrcTests
    public class CalculateHelper:HelperBase
     {
         public CalculateHelper(IWebDriver driver)
-            :base(driver){ }
+            : base(driver)
+        {
+        }
 
         public void FillAWBNumber(AwbData awb)
         {

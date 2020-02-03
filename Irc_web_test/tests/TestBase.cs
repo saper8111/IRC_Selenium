@@ -30,7 +30,7 @@ namespace WebIrcTests
             baseURL = "https://test.irc.ru.dhl.com/calculation";
             verificationErrors = new StringBuilder();
 
-            navigationHelper = new NavigationHelper(driver);
+            navigationHelper = new NavigationHelper(driver, baseURL);
             vatExceptionHelper = new VatExceptionHelper(driver);
             calculateHelper = new CalculateHelper(driver);
         }

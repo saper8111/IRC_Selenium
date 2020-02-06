@@ -9,12 +9,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace WebIrcTests
 {
-    public class NavigationHelper:HelperBase
+    public class NavigationHelper: HelperBase
     {
 
 
-        public NavigationHelper(IWebDriver driver)
-            : base(driver)
+        public NavigationHelper(ApplicationManager manager)
+            : base(manager)
         {
         }
             

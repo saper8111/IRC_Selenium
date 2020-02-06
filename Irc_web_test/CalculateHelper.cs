@@ -11,28 +11,35 @@ namespace WebIrcTests
 {
    public class CalculateHelper:HelperBase
     {
-        public CalculateHelper(IWebDriver driver)
-            : base(driver)
+        public CalculateHelper(ApplicationManager manager)
+            : base(manager)
         {
         }
 
-        public void FillAWBNumber(AwbData awb)
+
+
+
+
+        public CalculateHelper FillAWBNumber(AwbData awb)
         {
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(awb.Awb_number);
+            return this;
         }
 
-        public void ChoiseVAT()
+        public CalculateHelper ChoiseVAT()
         {
             driver.FindElement(By.Id("contract")).Click();
             new SelectElement(driver.FindElement(By.Id("contract"))).SelectByText("YES");
             Thread.Sleep(1000);
             driver.FindElement(By.Id("contract")).Click();
+            return this;
         }
 
-        public void InitCalculate()
+        public CalculateHelper InitCalculate()
         {
             driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
+            return this;
         }
     }
 }

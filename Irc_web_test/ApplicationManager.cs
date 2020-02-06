@@ -16,14 +16,25 @@ namespace WebIrcTests
         protected CalculateHelper calculateHelper;
         protected VatExceptionHelper vatExceptionHelper;
 
+
+
+
         public ApplicationManager()
         {
             driver = new ChromeDriver();
             baseURL = "https://test.irc.ru.dhl.com/calculation";
 
-            calculateHelper = new CalculateHelper(driver);
-            navigationHelper = new NavigationHelper(driver);
-            vatExceptionHelper = new VatExceptionHelper(driver);
+            calculateHelper = new CalculateHelper(this);
+            navigationHelper = new NavigationHelper(this);
+            vatExceptionHelper = new VatExceptionHelper(this);
+        }
+
+        public IWebDriver Driver
+        {
+            get
+            {
+                return driver;
+            }
         }
 
         public void Stop()

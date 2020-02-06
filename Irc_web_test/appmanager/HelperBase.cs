@@ -17,7 +17,6 @@ namespace WebIrcTests
 
         public HelperBase(ApplicationManager manager)
         {
-            //this.driver = driver;
             this.manager = manager;
             driver = manager.Driver;
         }

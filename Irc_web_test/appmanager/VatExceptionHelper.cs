@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WebIrcTests
@@ -14,12 +15,14 @@ namespace WebIrcTests
         {
         }
 
-        public VatExceptionHelper Create(VatAccountData vat)
+        public VatExceptionHelper Create(VatAccountData account)
         {
             manager.Navigation.OpenHomePage();
+            manager.Navigation.GoToVATExceptionListPage();
             InitRecordCreation();
-            FillRecordForm(vat);
+            FillRecordForm(new VatAccountData("123456789", "123456780"));
             SaveRecordCreation();
+            Thread.Sleep(1000); 
             return this;
         }
 

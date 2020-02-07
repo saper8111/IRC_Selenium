@@ -25,7 +25,7 @@ namespace WebIrcTests
             baseURL = "https://test.irc.ru.dhl.com/calculation";
 
             calculateHelper = new CalculateHelper(this);
-            navigationHelper = new NavigationHelper(this);
+            navigationHelper = new NavigationHelper(this, baseURL);
             vatExceptionHelper = new VatExceptionHelper(this);
         }
 

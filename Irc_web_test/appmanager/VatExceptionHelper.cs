@@ -34,14 +34,43 @@ namespace WebIrcTests
 
         public VatExceptionHelper FillRecordForm(VatAccountData account)
         {
-            driver.FindElement(By.Id("account0")).Click();
-            driver.FindElement(By.Id("account0")).SendKeys(account.Account0);
-            driver.FindElement(By.Id("account20")).Click();
-            driver.FindElement(By.Id("account20")).SendKeys(account.Account20);
-            driver.FindElement(By.Id("export")).Click();
-            driver.FindElement(By.Id("import")).Click();
+            //By locator = By.Id("account0");
+           // string text = account.Account0;
+
+            TypeAccount(By.Id("account0"), account.Account0);
+            TypeAccount(By.Id("account20"), account.Account20);
+            TypeImort(By.Id("import"));
+            TypeExport(By.Id("export"));
+
+            //driver.FindElement(By.Id("account0")).Click();
+            //driver.FindElement(By.Id("account0")).SendKeys(account.Account0);
+            //driver.FindElement(By.Id("account20")).Click();
+            //driver.FindElement(By.Id("account20")).SendKeys(account.Account20);
+            //driver.FindElement(By.Id("export")).Click();
+            //driver.FindElement(By.Id("import")).Click();
             return this;
         }
+        // проверить, имеет ли смысл, именно здесь (в этом "помошнике"), делать приведенные ниже методы (начало).
+        // может быть перенести данные методы в другой помошник (наприимер, CalculateHelper)?
+        private void TypeExport(By by)
+        {
+            driver.FindElement(By.Id("export")).Click();
+        }
+
+        private void TypeImort(By by)
+        {
+            driver.FindElement(By.Id("import")).Click();
+        }
+
+
+        
+        public void TypeAccount(By locator, string text)
+        {
+            driver.FindElement(locator).Click();
+            driver.FindElement(locator).SendKeys(text);
+        }
+
+        //  проверить, имеет ли смысл делать приведенные ниже методы (конец)
 
         public VatExceptionHelper SaveRecordCreation()
         {

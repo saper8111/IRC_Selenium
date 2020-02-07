@@ -16,7 +16,17 @@ namespace WebIrcTests
         {
         }
 
+        public CalculateHelper NewCalculate(AwbData awb)
+        {
+            manager.Navigation.OpenHomePage();
+            FillAWBNumber(new AwbData("7281956765"));
+            Thread.Sleep(1000); 
+            ChoiseVAT();
+            InitCalculate();
+            Thread.Sleep(10000); 
 
+            return this;
+        }
 
 
 

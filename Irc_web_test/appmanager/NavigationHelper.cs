@@ -13,7 +13,7 @@ namespace WebIrcTests
     {
 
 
-        public NavigationHelper(ApplicationManager manager)
+        public NavigationHelper(ApplicationManager manager, string baseURL)
             : base(manager)
         {
         }

@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+
+namespace WebIrcTests
+{
+    [SetUpFixture]
+
+    public class TestSuiteFixture
+    {
+        [SetUp]
+
+        public void InitApplicationManager()
+        {
+
+        }
+
+        [TearDown]
+
+        public void StopApplicationManager()
+        {
+
+        }
+    }
+}

@@ -47,7 +47,8 @@ namespace WebIrcTests
         {
             if(!app.IsValueCreated)
             {
-                app.Value = new ApplicationManager();
+                ApplicationManager newInstance = new ApplicationManager();
+                app.Value = newInstance;
             }
             return app.Value;
         }

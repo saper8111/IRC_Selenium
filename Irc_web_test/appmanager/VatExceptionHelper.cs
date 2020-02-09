@@ -26,9 +26,26 @@ namespace WebIrcTests
             return this;
         }
 
+        //public List<VatAccountData> GetAccountList()
+        //{
+        //    List<VatAccountData> Accounts = new List<VatAccountData>();
+        //    manager.Navigation.GoToVATExceptionListPage();
+        //    // получить список аккаунтов
+        //    ICollection<IWebElement> elements = driver.FindElements(By.XPath(""));
+        //    // строим цикл
+        //    foreach (IWebElement element in elements)
+        //    {
+        //        //element.Text;
+        //    }
+            
+        //    return Accounts;
+        //}
+
         public VatExceptionHelper InitRecordCreation()
         {
             driver.FindElement(By.LinkText("Add New Record")).Click();
+
+            // 
             return this;
         }
 

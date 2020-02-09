@@ -20,7 +20,12 @@ namespace WebIrcTests
         [Test]
         public void VatExceptionCreationTest()
         {
+            //List<VatAccountData> oldAccounts = app.VatException.GetAccountList();
+
             app.VatException.Create(new VatAccountData("123456789", "123456780"));
+
+            //List<VatAccountData> newAccounts = app.VatException.GetAccountList();
+            //Assert.AreEqual(oldAccounts.Count + 1, newAccounts.Count);
         }
 
         

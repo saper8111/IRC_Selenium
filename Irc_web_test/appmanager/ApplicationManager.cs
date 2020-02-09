@@ -16,10 +16,9 @@ namespace WebIrcTests
         protected CalculateHelper calculateHelper;
         protected VatExceptionHelper vatExceptionHelper;
 
+        private static ApplicationManager instance;
 
-
-
-        public ApplicationManager()
+        private ApplicationManager()
         {
             driver = new ChromeDriver();
             baseURL = "https://test.irc.ru.dhl.com/calculation";
@@ -27,6 +26,15 @@ namespace WebIrcTests
             calculateHelper = new CalculateHelper(this);
             navigationHelper = new NavigationHelper(this, baseURL);
             vatExceptionHelper = new VatExceptionHelper(this);
+        }
+
+        public static ApplicationManager GetInstance()
+        {
+            if(instance == null)
+            {
+                instance = new ApplicationManager();
+            }
+            return instance;
         }
 
         public IWebDriver Driver

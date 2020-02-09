@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
 
 namespace WebIrcTests
 {
@@ -16,7 +17,7 @@ namespace WebIrcTests
         protected CalculateHelper calculateHelper;
         protected VatExceptionHelper vatExceptionHelper;
 
-        private static ApplicationManager instance;
+        private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
         private ApplicationManager()
         {
@@ -28,24 +29,7 @@ namespace WebIrcTests
             vatExceptionHelper = new VatExceptionHelper(this);
         }
 
-        public static ApplicationManager GetInstance()
-        {
-            if(instance == null)
-            {
-                instance = new ApplicationManager();
-            }
-            return instance;
-        }
-
-        public IWebDriver Driver
-        {
-            get
-            {
-                return driver;
-            }
-        }
-
-        public void Stop()
+        ~ApplicationManager() // диструктор
         {
             try
             {
@@ -56,7 +40,26 @@ namespace WebIrcTests
                 // Ignore errors if unable to close the browser
             }
         }
-        
+
+
+
+        public static ApplicationManager GetInstance()
+        {
+            if(!app.IsValueCreated)
+            {
+                app.Value = new ApplicationManager();
+            }
+            return app.Value;
+        }
+
+        public IWebDriver Driver
+        {
+            get
+            {
+                return driver;
+            }
+        }
+
 
         public NavigationHelper Navigation
         {

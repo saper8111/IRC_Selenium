@@ -22,11 +22,5 @@ namespace WebIrcTests
 
         }
 
-        [TearDown]
-
-        public void StopApplicationManager()
-        {
-            ApplicationManager.GetInstance().Stop();
-        }
     }
 }

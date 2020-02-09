@@ -11,10 +11,13 @@ namespace WebIrcTests
 
     public class TestSuiteFixture
     {
+        public static ApplicationManager app;  // static - глобальное поле
+
         [SetUp]
 
         public void InitApplicationManager()
         {
+            app = new ApplicationManager();
 
         }
 
@@ -22,7 +25,7 @@ namespace WebIrcTests
 
         public void StopApplicationManager()
         {
-
+            app.Stop();
         }
     }
 }

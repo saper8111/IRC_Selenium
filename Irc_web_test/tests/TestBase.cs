@@ -11,13 +11,8 @@ namespace WebIrcTests
         [SetUp]
         public void SetupTest()
         {
-            app = new ApplicationManager();
+            app = TestSuiteFixture.app;
         }
 
-        [TearDown]
-        public void TeardownTest()
-        {
-            app.Stop();
-        }
     }
 }

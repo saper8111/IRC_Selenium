@@ -40,9 +40,41 @@ namespace WebIrcTests
         //    {
         //        //element.Text;
         //    }
-            
+
         //    return Accounts;
         //}
+
+        /*  из проекта "WebAddressbookTest"
+
+
+         public List<ContactData> GetContactList()
+    {
+        if(contactCach == null)
+        {
+            contactCach = new List<ContactData>();
+            manager.Navigation.OpenHomePage();
+            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("tr[name = 'entry']"));
+            foreach (IWebElement element in elements)
+            {
+                ContactData contact = new ContactData(element.Text);
+                element.FindElements(By.XPath(".//td"));
+                contact.Firstname = element.FindElement(By.XPath(".//td[3]")).Text;
+                contact.Lastname = element.FindElement(By.XPath(".//td[2]")).Text;
+
+                contactCach.Add(contact);
+            }
+        }
+
+
+
+
+
+
+
+         */
+
+
+
 
         public VatExceptionHelper InitRecordCreation()
         {

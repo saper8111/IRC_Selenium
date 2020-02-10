@@ -21,5 +21,12 @@ namespace WebIrcTests
             driver = manager.Driver;
         }
 
+        // продумать где еще данный метод можно использовать
+        public void Type(By locator, string text)
+        {
+            driver.FindElement(locator).SendKeys(text);
+        }
+        // продумать где еще данный метод можно использовать
+
     }
 }

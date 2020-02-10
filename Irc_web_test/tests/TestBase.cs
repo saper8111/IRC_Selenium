@@ -11,13 +11,8 @@ namespace WebIrcTests
         [SetUp]
         public void SetupTest()
         {
-            app = new ApplicationManager();
+            app = ApplicationManager.GetInstance();
         }
 
-        [TearDown]
-        public void TeardownTest()
-        {
-            app.Stop();
-        }
     }
 }

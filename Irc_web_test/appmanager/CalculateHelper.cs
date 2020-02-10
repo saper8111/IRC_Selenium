@@ -33,7 +33,8 @@ namespace WebIrcTests
         public CalculateHelper FillAWBNumber(AwbData awb)
         {
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(awb.Awb_number);
+            Type(By.XPath("//input[@type='text']"), awb.Awb_number);
+            //driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(awb.Awb_number);
             return this;
         }
 

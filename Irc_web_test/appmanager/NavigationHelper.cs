@@ -23,7 +23,9 @@ namespace WebIrcTests
 
         public void OpenHomePage()
         {
-            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
+            // добавить проверку того, что если пользователь уже находится на данной
+            // странице, то переходить никуда не надо.
+            driver.Navigate().GoToUrl("https://demo.irc.ru.dhl.com/calculation");
         }
 
         public void GoToHomePage()
@@ -33,6 +35,8 @@ namespace WebIrcTests
 
         public void GoToVATExceptionListPage()
         {
+            // добавить проверку того, что если пользователь уже находится на данной
+           // странице, то переходить никуда не надо.
             driver.FindElement(By.LinkText("Vat Exception List")).Click();
         }
     }

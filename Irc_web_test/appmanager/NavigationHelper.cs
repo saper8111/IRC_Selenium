@@ -25,7 +25,7 @@ namespace WebIrcTests
         {
             // добавить проверку того, что если пользователь уже находится на данной
             // странице, то переходить никуда не надо.
-            driver.Navigate().GoToUrl("https://demo.irc.ru.dhl.com/calculation");
+            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
         }
 
         public void GoToHomePage()

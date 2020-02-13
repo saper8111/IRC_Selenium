@@ -13,7 +13,7 @@ namespace WebIrcTests
         private string account20 = "";
 
 
-        public VatAccountData (string account0, string account20)
+        public VatAccountData (string account0)
         {
             this.account0 = account0;
         }

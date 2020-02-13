@@ -23,7 +23,7 @@ namespace WebIrcTests
             manager.Navigation.GoToVATExceptionListPage();
             //Thread.Sleep(1000);
             InitRecordCreation();
-            FillRecordForm(new VatAccountData("123456789", "123456780"));
+            FillRecordForm(account);
             SaveRecordCreation();
             Thread.Sleep(1000); 
             return this;

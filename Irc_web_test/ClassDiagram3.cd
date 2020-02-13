@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebIrcTests.ApplicationManager">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <Members>
+      <Property Name="Calculate" Hidden="true" />
+      <Property Name="Navigation" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAgAAAAgAAACAACAAgAAAIAAAAAEAQCA=</HashCode>
+      <FileName>appmanager\ApplicationManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="navigationHelper" />
+      <Field Name="calculateHelper" />
+      <Field Name="vatExceptionHelper" />
+      <Property Name="Navigation" />
+      <Property Name="Calculate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WebIrcTests.TestBase">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>tests\TestBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="app" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WebIrcTests.HelperBase" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>appmanager\HelperBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.NavigationHelper" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>appmanager\NavigationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.VatExceptionHelper" Collapsed="true">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAQAEAAEAAAAAAAAAA=</HashCode>
+      <FileName>appmanager\VatExceptionHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.CalculateHelper" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACAgAA=</HashCode>
+      <FileName>appmanager\CalculateHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.CalculateTests" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>tests\CalculateTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.VatExceptionCreationTests" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tests\VatExceptionCreationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

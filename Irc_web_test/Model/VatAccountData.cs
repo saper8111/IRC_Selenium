@@ -10,12 +10,11 @@ namespace WebIrcTests
    public class VatAccountData
     {
         private string account0;
-        private string account20;
+        private string account20 = "";
 
-        public VatAccountData (string account0, string account20)
+        public VatAccountData (string account0)
         {
             this.account0 = account0;
-            this.account20 = account20;
         }
 
         public string Account0

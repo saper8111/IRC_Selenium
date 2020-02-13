@@ -24,7 +24,9 @@ namespace WebIrcTests
             app.Navigation.OpenHomePage();
             app.Navigation.GoToVATExceptionListPage();
             app.VatException.InitRecordCreation();
-            app.VatException.FillRecordForm(new VatAccountData("123456789", "123456780"));
+            VatAccountData account = new VatAccountData("123456789");
+            account.Account20 = "123456780";
+            app.VatException.FillRecordForm(account);
             app.VatException.SaveRecordCreation();
             Thread.Sleep(1000);
             app.Navigation.GoToHomePage();

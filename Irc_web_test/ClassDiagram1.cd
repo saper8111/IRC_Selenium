@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WebIrcTests.ApplicationManager" Collapsed="true">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAgAAAAgAAACAACAAAAAAIAAAAAEAQCA=</HashCode>
+      <FileName>ApplicationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.CalculateHelper" Collapsed="true">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAACAgAA=</HashCode>
+      <FileName>CalculateHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.HelperBase" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>HelperBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.NavigationHelper" Collapsed="true">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>NavigationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.VatExceptionHelper" Collapsed="true">
+    <Position X="1.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>VatExceptionHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.TestBase">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>tests\TestBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.CalculateTests" Collapsed="true">
+    <Position X="1" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>tests\CalculateTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebIrcTests.VatExceptionCreationTests" Collapsed="true">
+    <Position X="1" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tests\VatExceptionCreationTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

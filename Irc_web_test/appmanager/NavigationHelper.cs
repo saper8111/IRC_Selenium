@@ -39,5 +39,18 @@ namespace WebIrcTests
            // странице, то переходить никуда не надо.
             driver.FindElement(By.LinkText("Vat Exception List")).Click();
         }
+
+        public void SearchAddRecord()
+        {
+            manager.Navigation.OpenHomePage();
+            manager.Navigation.GoToVATExceptionListPage();
+            //driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
+            driver.FindElement(By.XPath("//input[@type='text']")).Click();
+            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
+        }
+
+
     }
 }

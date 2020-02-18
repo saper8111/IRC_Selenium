@@ -17,64 +17,28 @@ namespace WebIrcTests
 
         public VatExceptionHelper Create(VatAccountData account)
         {
-            manager.Navigation.OpenHomePage();  //данные методы можно удалить
+            //manager.Navigation.OpenHomePage();  //данные методы можно удалить
             Thread.Sleep(1000); //данные методы можно удалить
 
-            manager.Navigation.GoToVATExceptionListPage();
-            //Thread.Sleep(1000);
+          // manager.Navigation.GoToVATExceptionListPage();
+            Thread.Sleep(1000);
             InitRecordCreation();
             FillRecordForm(account);
             SaveRecordCreation();
+            Thread.Sleep(1000);
+            SearchAddRecord();
             Thread.Sleep(1000); 
             return this;
         }
 
-        //public List<VatAccountData> GetAccountList()
-        //{
-        //    List<VatAccountData> Accounts = new List<VatAccountData>();
-        //    manager.Navigation.GoToVATExceptionListPage();
-        //    // получить список аккаунтов
-        //    ICollection<IWebElement> elements = driver.FindElements(By.XPath(""));
-        //    // строим цикл
-        //    foreach (IWebElement element in elements)
-        //    {
-        //        //element.Text;
-        //    }
-
-        //    return Accounts;
-        //}
-
-        /*  из проекта "WebAddressbookTest"
-
-
-         public List<ContactData> GetContactList()
-    {
-        if(contactCach == null)
+        private void SearchAddRecord()
         {
-            contactCach = new List<ContactData>();
-            manager.Navigation.OpenHomePage();
-            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("tr[name = 'entry']"));
-            foreach (IWebElement element in elements)
-            {
-                ContactData contact = new ContactData(element.Text);
-                element.FindElements(By.XPath(".//td"));
-                contact.Firstname = element.FindElement(By.XPath(".//td[3]")).Text;
-                contact.Lastname = element.FindElement(By.XPath(".//td[2]")).Text;
-
-                contactCach.Add(contact);
-            }
+            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
+            driver.FindElement(By.XPath("//input[@type='text']")).Click();
+            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
         }
-
-
-
-
-
-
-
-         */
-
-
-
 
         public VatExceptionHelper InitRecordCreation()
         {
@@ -111,5 +75,37 @@ namespace WebIrcTests
             return this;
 
         }
+
+        public List<VatAccountData> GetAccountList()
+        {
+            manager.Navigation.OpenHomePage();
+            manager.Navigation.SearchAddRecord();
+            List<VatAccountData> accounts = new List<VatAccountData>();
+
+            // получить список аккаунтов
+            ICollection<IWebElement> elements = driver.FindElements(By.XPath(".//td[2]"));
+            // строим цикл
+            foreach (IWebElement element in elements)
+            {
+                accounts.Add(new VatAccountData(element.Text));
+            }
+
+            return accounts;
+        }
+
+        /*
+         
+         driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
+            driver.FindElement(By.XPath("//input[@type='text']")).Click();
+            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
+         
+         
+         
+         */
+
+
+
     }
 }

@@ -17,27 +17,27 @@ namespace WebIrcTests
 
         public VatExceptionHelper Create(VatAccountData account)
         {
-            //manager.Navigation.OpenHomePage();  //данные методы можно удалить
+            manager.Navigation.OpenHomePage();  //данные методы можно удалить
             Thread.Sleep(1000); //данные методы можно удалить
-
-          // manager.Navigation.GoToVATExceptionListPage();
+            manager.Navigation.GoToVATExceptionListPage();
             Thread.Sleep(1000);
             InitRecordCreation();
             FillRecordForm(account);
             SaveRecordCreation();
             Thread.Sleep(1000);
             SearchAddRecord();
-            Thread.Sleep(1000); 
             return this;
         }
 
-        private void SearchAddRecord()
+        public VatExceptionHelper SearchAddRecord()
         {
-            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
+            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
+            driver.FindElement(By.LinkText("Vat Exception List")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Clear();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456780");
             driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
+            return this;
         }
 
         public VatExceptionHelper InitRecordCreation()
@@ -79,7 +79,8 @@ namespace WebIrcTests
         public List<VatAccountData> GetAccountList()
         {
             manager.Navigation.OpenHomePage();
-            manager.Navigation.SearchAddRecord();
+            manager.Navigation.GoToVATExceptionListPage();
+            manager.VatException.SearchAddRecord();
             List<VatAccountData> accounts = new List<VatAccountData>();
 
             // получить список аккаунтов
@@ -92,18 +93,6 @@ namespace WebIrcTests
 
             return accounts;
         }
-
-        /*
-         
-         driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
-            driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
-         
-         
-         
-         */
 
 
 

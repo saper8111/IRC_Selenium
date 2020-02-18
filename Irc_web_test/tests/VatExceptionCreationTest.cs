@@ -20,11 +20,9 @@ namespace WebIrcTests
         [Test]
         public void VatExceptionCreationTest()
         {
-      
-            
 
-            VatAccountData account = new VatAccountData("123456789");
-            account.Account20 = "123456780";
+            VatAccountData account = new VatAccountData("123456780");
+            account.Account20 = "123456789";
 
             List<VatAccountData> oldAccounts = app.VatException.GetAccountList();
 
@@ -34,20 +32,8 @@ namespace WebIrcTests
             Assert.AreEqual(oldAccounts.Count + 1, newAccounts.Count);
         }
 
-        /*
-         
-         
-         driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
-            driver.FindElement(By.XPath("//input[@type='text']")).Click();
-            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456789");
-            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
-         
-         
-         
-         
-         */
-
+        /**/
+        
     }
 
 

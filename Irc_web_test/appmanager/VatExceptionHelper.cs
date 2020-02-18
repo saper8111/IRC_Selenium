@@ -17,8 +17,8 @@ namespace WebIrcTests
 
         public VatExceptionHelper Create(VatAccountData account)
         {
-            //manager.Navigation.OpenHomePage();  //данные методы можно удалить
-            //Thread.Sleep(1000); //данные методы можно удалить
+            manager.Navigation.OpenHomePage();  //данные методы можно удалить
+            Thread.Sleep(1000); //данные методы можно удалить
 
             manager.Navigation.GoToVATExceptionListPage();
             //Thread.Sleep(1000);

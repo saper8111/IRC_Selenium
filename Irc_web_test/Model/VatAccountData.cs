@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WebIrcTests
 {
    
-   public class VatAccountData
+   public class VatAccountData : IEquatable<VatAccountData>, IComparable<VatAccountData>
     {
         private string account0;
         private string account20 = "";
@@ -44,9 +44,29 @@ namespace WebIrcTests
                 account20 = value;
             }
         }
-        
 
-        
+        public int CompareTo(VatAccountData other)
+        {
+            if (Object.ReferenceEquals(other, null))
+            {
+                return 1;
+            }
+            return Account0.CompareTo(other.Account0);
+        }
+
+        public bool Equals(VatAccountData other)
+        {
+            if (Object.ReferenceEquals(other, null))
+            {
+                return false;
+            }
+            if (Object.ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            return Account0 == other.Account0;
+            
+        }
     }
    
 }

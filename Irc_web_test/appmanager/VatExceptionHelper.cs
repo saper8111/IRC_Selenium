@@ -25,7 +25,6 @@ namespace WebIrcTests
             FillRecordForm(account);
             SaveRecordCreation();
             Thread.Sleep(1000);
-            //SearchAddRecord();
             return this;
         }
 

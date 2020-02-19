@@ -24,10 +24,15 @@ namespace WebIrcTests
             account.Account20 = "123456710";
 
             List<VatAccountData> oldAccounts = app.VatException.GetAccountList();
-            app.VatException.Create(account);
 
+            app.VatException.Create(account);
             List<VatAccountData> newAccounts = app.VatException.GetAccountList();
             Assert.AreEqual(oldAccounts.Count + 1, newAccounts.Count);
+            oldAccounts.Add(account);
+            oldAccounts.Sort();
+            newAccounts.Sort();
+            Assert.AreEqual(oldAccounts, newAccounts);
+
         }
 
         /**/

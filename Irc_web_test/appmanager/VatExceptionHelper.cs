@@ -25,14 +25,15 @@ namespace WebIrcTests
             FillRecordForm(account);
             SaveRecordCreation();
             Thread.Sleep(1000);
-            SearchAddRecord();
+            //SearchAddRecord();
             return this;
         }
 
         public VatExceptionHelper SearchAddRecord()
         {
-            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
-            driver.FindElement(By.LinkText("Vat Exception List")).Click();
+            //driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
+            //Thread.Sleep(1000);
+            //driver.FindElement(By.LinkText("Vat Exception List")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Clear();
             driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456780");
@@ -79,8 +80,11 @@ namespace WebIrcTests
         public List<VatAccountData> GetAccountList()
         {
             manager.Navigation.OpenHomePage();
+            Thread.Sleep(1000);
             manager.Navigation.GoToVATExceptionListPage();
+            Thread.Sleep(1000);
             manager.VatException.SearchAddRecord();
+            Thread.Sleep(1000);
             List<VatAccountData> accounts = new List<VatAccountData>();
 
             // получить список аккаунтов

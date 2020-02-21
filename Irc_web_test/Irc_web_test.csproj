@@ -70,6 +70,7 @@
     <Compile Include="tests\VatExceptionCreationTest.cs" />
     <Compile Include="tests\CalculateTest.cs" />
     <Compile Include="appmanager\VatExceptionHelper.cs" />
+    <Compile Include="tests\VatExceptionRemovatTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram3.cd" />

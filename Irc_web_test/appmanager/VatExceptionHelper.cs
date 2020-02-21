@@ -28,6 +28,16 @@ namespace WebIrcTests
             return this;
         }
 
+        public void  Remove()
+        {
+            manager.Navigation.OpenHomePage();
+            manager.Navigation.GoToVATExceptionListPage();
+            SearchAddRecord();
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath("//td[9]")).Click();
+
+        }
+
         public VatExceptionHelper SearchAddRecord()
         {
             //driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");

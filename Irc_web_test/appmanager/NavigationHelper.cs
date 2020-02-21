@@ -22,9 +22,12 @@ namespace WebIrcTests
 
 
         public void OpenHomePage()
-        {
-            // добавить проверку того, что если пользователь уже находится на данной
-            // странице, то переходить никуда не надо.
+        { 
+            if(driver.Url == "https://test.irc.ru.dhl.com/calculation")
+            {
+                return;
+            }
+         
             driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
         }
 
@@ -35,9 +38,41 @@ namespace WebIrcTests
 
         public void GoToVATExceptionListPage()
         {
-            // добавить проверку того, что если пользователь уже находится на данной
-           // странице, то переходить никуда не надо.
-            driver.FindElement(By.LinkText("Vat Exception List")).Click();
+            if (driver.Url == "https://test.irc.ru.dhl.com/vat-exception-list"
+                && IsElementPresent(By.XPath("//h1[@class='title']")))
+            {
+                return;
+            }
+
+            driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/vat-exception-list");
+        }
+
+
+
+        public bool IsElementPresent(By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool IsAlertPresent()
+        {
+            try
+            {
+                driver.SwitchTo().Alert();
+                return true;
+            }
+            catch (NoAlertPresentException)
+            {
+                return false;
+            }
         }
     }
 }

@@ -28,6 +28,11 @@ namespace WebIrcTests
             return this;
         }
 
+        public bool VatExceptionIsNotCreated()
+        {
+            return !IsElementPresent(By.XPath("//td[1]"));
+        }
+
         public void  Remove()
         {
             manager.Navigation.OpenHomePage();
@@ -53,8 +58,6 @@ namespace WebIrcTests
         public VatExceptionHelper InitRecordCreation()
         {
             driver.FindElement(By.LinkText("Add New Record")).Click();
-
-            // 
             return this;
         }
 

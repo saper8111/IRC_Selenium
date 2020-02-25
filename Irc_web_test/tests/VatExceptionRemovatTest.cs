@@ -20,7 +20,19 @@ namespace WebIrcTests
 
         public void VatExceptionRemovalTest()
         {
+            if (app.VatException.VatExceptionIsNotCreated())
+            {
+                VatAccountData newaccount = new VatAccountData("123456781");
+                newaccount.Account20 = "123456782";
+                app.VatException.Create(newaccount);
+
+            }
             app.VatException.Remove();
+
+           
+
+           
         }
+
     }
 }

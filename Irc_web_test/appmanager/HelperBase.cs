@@ -26,7 +26,20 @@ namespace WebIrcTests
         {
             driver.FindElement(locator).SendKeys(text);
         }
-        // продумать где еще данный метод можно использовать
+
+        public bool IsElementPresent(By by)
+        {
+            try
+            {
+                driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
 
     }
+
 }

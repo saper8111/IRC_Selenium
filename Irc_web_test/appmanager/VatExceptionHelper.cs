@@ -48,7 +48,7 @@ namespace WebIrcTests
 
         }
 
-        internal void AddFailResultInTestRail()
+        public void AddFailResultInTestRail()
         {
             APIClient client = new APIClient("https://dhlru.testrail.io/");
             client.User = "Vyacheslav.Kozhurov@dhl.ru";

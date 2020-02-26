@@ -27,27 +27,22 @@ namespace WebIrcTests
 
             app.VatException.Create(account);
             List<VatAccountData> newAccounts = app.VatException.GetAccountList();
-            if (oldAccounts.Count + 2 != newAccounts.Count)
+            if (oldAccounts.Count + 1 != newAccounts.Count)
             {
                 app.VatException.AddFailResultInTestRail();
             }
-            //Assert.AreEqual(oldAccounts.Count + 2, newAccounts.Count);
-            //oldAccounts.Add(account);
-            //oldAccounts.Sort();
-            //newAccounts.Sort();
-            //Assert.AreEqual(oldAccounts, newAccounts);
+            else
+            {
+                app.VatException.AddPassResultInTestRail();
+            }
 
 
-            //if (app.VatException.VatExceptionIsNotCreated())
-            //{
-            //    app.VatException.AddFailResultInTestRail();
-            //}
-            //app.VatException.AddPassResultInTestRail();
+            Assert.AreEqual(oldAccounts.Count + 1, newAccounts.Count);
+            oldAccounts.Add(account);
+            oldAccounts.Sort();
+            newAccounts.Sort();
+            Assert.AreEqual(oldAccounts, newAccounts);
 
-            //if (oldAccounts.Count + 2 != newAccounts.Count)
-            //{
-            //    app.VatException.AddFailResultInTestRail();
-            //}
         }
 
 

@@ -25,15 +25,23 @@ namespace WebIrcTests
                 VatAccountData newaccount = new VatAccountData("123456781");
                 newaccount.Account20 = "123456782";
                 app.VatException.Create(newaccount);
-
             }
+
+            Assert.IsFalse(app.VatException.VatExceptionIsNotCreated());
+
+            List<VatAccountData> oldAccount = app.VatException.GetAccountList();
+
             app.VatException.Remove();
 
+            List<VatAccountData> newAccount = app.VatException.GetAccountList();
+
+            oldAccount.RemoveAt(0);
+
+            Assert.AreEqual(oldAccount, newAccount);
 
 
-           
 
-           
+
         }
 
     }

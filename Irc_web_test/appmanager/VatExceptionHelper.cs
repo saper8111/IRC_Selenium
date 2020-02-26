@@ -58,7 +58,7 @@ namespace WebIrcTests
             var data = new Dictionary<string, object>
             {
                 {"status_id", "5" },
-                {"comment", "DA" }
+                {"comment", "Не УРА" }
             };
             client.SendPost("add_result_for_case/294/2618", data);
         }
@@ -73,7 +73,7 @@ namespace WebIrcTests
             var data = new Dictionary<string, object>
             {
                 {"status_id", "1" },
-                {"comment", "DA" }
+                {"comment", "УРА" }
             };
             client.SendPost("add_result_for_case/294/2618", data);
         }

@@ -41,7 +41,7 @@ namespace WebIrcTests
         public CalculateHelper ChoiseVAT()
         {
             driver.FindElement(By.Id("contract")).Click();
-            new SelectElement(driver.FindElement(By.Id("contract"))).SelectByText("YES");
+            new SelectElement(driver.FindElement(By.Id("contract"))).SelectByText("NO");
             Thread.Sleep(1000);
             driver.FindElement(By.Id("contract")).Click();
             return this;

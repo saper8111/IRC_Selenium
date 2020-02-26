@@ -12,6 +12,7 @@ namespace WebIrcTests
     {
         protected IWebDriver driver;
         protected string baseURL;
+        protected string testrailURL;
 
         protected NavigationHelper navigationHelper;
         protected CalculateHelper calculateHelper;
@@ -23,6 +24,7 @@ namespace WebIrcTests
         {
             driver = new ChromeDriver();
             baseURL = "https://test.irc.ru.dhl.com/calculation";
+           
 
             calculateHelper = new CalculateHelper(this);
             navigationHelper = new NavigationHelper(this, baseURL);

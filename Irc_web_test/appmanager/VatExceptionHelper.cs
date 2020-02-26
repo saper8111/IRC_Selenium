@@ -5,6 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using Gurock.TestRail;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WebIrcTests
 {
@@ -41,6 +46,41 @@ namespace WebIrcTests
             Thread.Sleep(1000);
             driver.FindElement(By.XPath("//td[9]")).Click();
 
+        }
+
+        internal void AddFailResultInTestRail()
+        {
+            APIClient client = new APIClient("https://dhlru.testrail.io/");
+            client.User = "Vyacheslav.Kozhurov@dhl.ru";
+            client.Password = "1xVixA7Ug7q4Ys1di36M";
+            JObject c = (JObject)client.SendGet("get_case/2618");
+            Console.WriteLine(c["title"]);
+            var data = new Dictionary<string, object>
+            {
+                {"status_id", "5" },
+                {"comment", "DA" }
+            };
+            client.SendPost("add_result_for_case/294/2618", data);
+        }
+
+        public void AddPassResultInTestRail()
+        {
+            APIClient client = new APIClient("https://dhlru.testrail.io/");
+            client.User = "Vyacheslav.Kozhurov@dhl.ru";
+            client.Password = "1xVixA7Ug7q4Ys1di36M";
+            JObject c = (JObject)client.SendGet("get_case/2618");
+            Console.WriteLine(c["title"]);
+            var data = new Dictionary<string, object>
+            {
+                {"status_id", "1" },
+                {"comment", "DA" }
+            };
+            client.SendPost("add_result_for_case/294/2618", data);
+        }
+
+        public bool VatExceptionIsCreated()
+        {
+            return IsElementPresent(By.XPath("//td[1]"));
         }
 
         public VatExceptionHelper SearchAddRecord()

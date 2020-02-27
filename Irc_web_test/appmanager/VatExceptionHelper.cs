@@ -22,8 +22,8 @@ namespace WebIrcTests
 
         public VatExceptionHelper Create(VatAccountData account)
         {
-            manager.Navigation.OpenHomePage();  //данные методы можно удалить
-            Thread.Sleep(1000); //данные методы можно удалить
+            //manager.Navigation.OpenHomePage();  //данные методы можно удалить
+            //Thread.Sleep(1000); //данные методы можно удалить
             manager.Navigation.GoToVATExceptionListPage();
             Thread.Sleep(1000);
             InitRecordCreation();
@@ -40,9 +40,9 @@ namespace WebIrcTests
 
         public void  Remove()
         {
-            manager.Navigation.OpenHomePage();
+            //manager.Navigation.OpenHomePage();
             manager.Navigation.GoToVATExceptionListPage();
-            SearchAddRecord();
+            //SearchAddRecord();
             Thread.Sleep(1000);
             driver.FindElement(By.XPath("//td[9]")).Click();
 
@@ -85,9 +85,6 @@ namespace WebIrcTests
 
         public VatExceptionHelper SearchAddRecord()
         {
-            //driver.Navigate().GoToUrl("https://test.irc.ru.dhl.com/calculation");
-            //Thread.Sleep(1000);
-            //driver.FindElement(By.LinkText("Vat Exception List")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Click();
             driver.FindElement(By.XPath("//input[@type='text']")).Clear();
             driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("123456780");
@@ -131,8 +128,9 @@ namespace WebIrcTests
 
         public List<VatAccountData> GetAccountList()
         {
-            manager.Navigation.OpenHomePage();
-            Thread.Sleep(1000);
+            
+            //manager.Navigation.OpenHomePage();
+            //Thread.Sleep(1000);
             manager.Navigation.GoToVATExceptionListPage();
             Thread.Sleep(1000);
             manager.VatException.SearchAddRecord();

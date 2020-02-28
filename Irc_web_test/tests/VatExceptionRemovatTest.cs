@@ -21,6 +21,7 @@ namespace WebIrcTests
         public void VatExceptionRemovalTest()
         {
             app.Navigation.GoToVATExceptionListPage();
+            
 
             if (app.VatException.VatExceptionIsNotCreated())
             {
@@ -45,6 +46,7 @@ namespace WebIrcTests
 
 
         }
+        
 
     }
 }

@@ -92,6 +92,15 @@ namespace WebIrcTests
             return this;
         }
 
+        public VatExceptionHelper SearchAddAnotherRecord()
+        {
+            driver.FindElement(By.XPath("//input[@type='text']")).Click();
+            driver.FindElement(By.XPath("//input[@type='text']")).Clear();
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys("111111111");
+            driver.FindElement(By.XPath("//input[@type='text']")).SendKeys(Keys.Enter);
+            return this;
+        }
+
         public VatExceptionHelper InitRecordCreation()
         {
             driver.FindElement(By.LinkText("Add New Record")).Click();
@@ -133,7 +142,7 @@ namespace WebIrcTests
             //Thread.Sleep(1000);
             manager.Navigation.GoToVATExceptionListPage();
             Thread.Sleep(1000);
-            manager.VatException.SearchAddRecord();
+            manager.VatException.SearchAddAnotherRecord();
             Thread.Sleep(1000);
             List<VatAccountData> accounts = new List<VatAccountData>();
 

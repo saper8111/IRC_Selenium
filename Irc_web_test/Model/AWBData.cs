@@ -21,7 +21,7 @@ namespace WebIrcTests
             {
                 return awb_number;
             }
-            set
+            private set
             {
                 awb_number = value;
             }

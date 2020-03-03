@@ -1,15 +1,10 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace WebIrcTests
 {
-   public class CalculateHelper:HelperBase
+    public class CalculateHelper:HelperBase
     {
         public CalculateHelper(ApplicationManager manager)
             : base(manager)
@@ -19,7 +14,7 @@ namespace WebIrcTests
         public CalculateHelper NewCalculate(AwbData awb)
         {
             manager.Navigation.OpenHomePage();
-            FillAWBNumber(new AwbData("7281956765"));
+            FillAWBNumber(awb);
             Thread.Sleep(1000); 
             ChoiseVAT();
             InitCalculate();

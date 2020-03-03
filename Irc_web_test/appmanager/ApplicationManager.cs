@@ -1,8 +1,5 @@
 ﻿using System;
 using OpenQA.Selenium;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 
@@ -12,7 +9,6 @@ namespace WebIrcTests
     {
         protected IWebDriver driver;
         protected string baseURL;
-        protected string testrailURL;
 
         protected NavigationHelper navigationHelper;
         protected CalculateHelper calculateHelper;

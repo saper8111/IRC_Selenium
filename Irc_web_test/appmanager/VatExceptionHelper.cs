@@ -1,15 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using Gurock.TestRail;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace WebIrcTests
 {
@@ -48,35 +39,35 @@ namespace WebIrcTests
 
         }
 
-        public void AddFailResultInTestRail()
-        {
-            APIClient client = new APIClient("https://dhlru.testrail.io/");
-            client.User = "Vyacheslav.Kozhurov@dhl.ru";
-            client.Password = "1xVixA7Ug7q4Ys1di36M";
-            JObject c = (JObject)client.SendGet("get_case/2618");
-            Console.WriteLine(c["title"]);
-            var data = new Dictionary<string, object>
-            {
-                {"status_id", "5" },
-                {"comment", "Не УРА" }
-            };
-            client.SendPost("add_result_for_case/294/2618", data);
-        }
+        //public void AddFailResultInTestRail()
+        //{
+        //    APIClient client = new APIClient("https://dhlru.testrail.io/");
+        //    client.User = "Vyacheslav.Kozhurov@dhl.ru";
+        //    client.Password = "1xVixA7Ug7q4Ys1di36M";
+        //    JObject c = (JObject)client.SendGet("get_case/2618");
+        //    Console.WriteLine(c["title"]);
+        //    var data = new Dictionary<string, object>
+        //    {
+        //        {"status_id", "5" },
+        //        {"comment", "Не УРА" }
+        //    };
+        //    client.SendPost("add_result_for_case/294/2618", data);
+        //}
 
-        public void AddPassResultInTestRail()
-        {
-            APIClient client = new APIClient("https://dhlru.testrail.io/");
-            client.User = "Vyacheslav.Kozhurov@dhl.ru";
-            client.Password = "1xVixA7Ug7q4Ys1di36M";
-            JObject c = (JObject)client.SendGet("get_case/2618");
-            Console.WriteLine(c["title"]);
-            var data = new Dictionary<string, object>
-            {
-                {"status_id", "1" },
-                {"comment", "УРА" }
-            };
-            client.SendPost("add_result_for_case/294/2618", data);
-        }
+        //public void AddPassResultInTestRail()
+        //{
+        //    APIClient client = new APIClient("https://dhlru.testrail.io/");
+        //    client.User = "Vyacheslav.Kozhurov@dhl.ru";
+        //    client.Password = "1xVixA7Ug7q4Ys1di36M";
+        //    JObject c = (JObject)client.SendGet("get_case/2618");
+        //    Console.WriteLine(c["title"]);
+        //    var data = new Dictionary<string, object>
+        //    {
+        //        {"status_id", "1" },
+        //        {"comment", "УРА" }
+        //    };
+        //    client.SendPost("add_result_for_case/294/2618", data);
+        //}
 
         public bool VatExceptionIsCreated()
         {
@@ -142,7 +133,7 @@ namespace WebIrcTests
             //Thread.Sleep(1000);
             manager.Navigation.GoToVATExceptionListPage();
             Thread.Sleep(1000);
-            manager.VatException.SearchAddAnotherRecord();
+            manager.VatException.SearchAddRecord();
             Thread.Sleep(1000);
             List<VatAccountData> accounts = new List<VatAccountData>();
 
